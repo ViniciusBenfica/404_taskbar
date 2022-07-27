@@ -1,0 +1,22 @@
+mtb = Tunnel.getInterface("vrp_taskbar")
+
+RegisterCommand("task",function(source,args,rawCommand)
+	local source = source
+	local result = mtb.mtb_Taskbar(source,tonumber(args[1]),tonumber(args[2]),tonumber(args[3]))
+	if result then 
+		print("WIN")
+	else
+		print("LOOSE")
+	end
+end)
+
+------------------------------------------------------------------------------------------------------------
+Esse é um comando de teste, feito para você entender como funciona o script, deve ser usado no lado server;
+A forma que se chama é representada como:
+
+local result = mtb.mtb_Taskbar(source,quantidade_de_vezes,velocidade,tipo_do_jogo)
+
+quantidade_de_vezes = Quantidade de vezes que a pessoa precisa acertar para ganhar;
+velocidade = Velocidade do minigame, sendo 1 a mais difícil;
+tipo_do_jogo = 1: primeiro game, 2: segundo game;
+------------------------------------------------------------------------------------------------------------
